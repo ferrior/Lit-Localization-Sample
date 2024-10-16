@@ -13,10 +13,13 @@ const messages = {
 const cache = createIntlCache();
 
 // 初始化国际化实例
-let intl = createIntl({
-  locale: 'en',
-  messages: messages['en'],
-}, cache);
+let intl = createIntl(
+  {
+    locale: 'en',
+    messages: messages['en'],
+  },
+  cache,
+);
 
 class MyComponent extends LitElement {
   static styles = css`
@@ -33,10 +36,13 @@ class MyComponent extends LitElement {
   }
 
   switchLanguage(lang) {
-    intl = createIntl({
-      locale: lang,
-      messages: messages[lang],
-    }, cache);
+    intl = createIntl(
+      {
+        locale: lang,
+        messages: messages[lang],
+      },
+      cache,
+    );
     this.requestUpdate();
   }
 
@@ -48,7 +54,7 @@ class MyComponent extends LitElement {
         b: (content) => html`<b>${content}</b>`,
         name: html`<b>${this.name}</b>`,
         place: html`<b>${this.place}</b>`,
-      }
+      },
     );
     return message;
   }
@@ -57,8 +63,12 @@ class MyComponent extends LitElement {
     return html`
       <div>
         <p>${this.renderMessage()}</p>
-        <button @click=${() => this.switchLanguage('fr')}>Switch to French</button>
-        <button @click=${() => this.switchLanguage('en')}>Switch to English</button>
+        <button @click=${() => this.switchLanguage('fr')}>
+          Switch to French
+        </button>
+        <button @click=${() => this.switchLanguage('en')}>
+          Switch to English
+        </button>
       </div>
     `;
   }
