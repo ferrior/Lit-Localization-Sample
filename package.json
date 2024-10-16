@@ -1,0 +1,24 @@
+{
+  "name": "litlocalization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server",
+    "dev": "vite"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@formatjs/intl": "^2.10.8",
+    "@formatjs/intl-displaynames": "^6.6.10",
+    "@formatjs/intl-locale": "^4.0.2",
+    "@formatjs/intl-pluralrules": "^5.2.16",
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "vite": "^5.4.9"
+  }
+}
